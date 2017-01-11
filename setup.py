@@ -7,7 +7,7 @@ setup(name='CTRegisterMicroserviceFlask',
       author_email='sergio.gordillo@vizzuality.com',
       license='MIT',
       packages=['CTRegisterMicroserviceFlask'],
-      tall_requires=[
+      install_requires=[
         'flask',
         'requests'
       ],
