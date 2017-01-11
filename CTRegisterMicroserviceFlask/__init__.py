@@ -13,7 +13,6 @@ def autoregister(app, name, info, swagger, mode, ct_url=False, url=False, active
     raise ValueError('microservice has not been registered')
 
 def register(app, name, info, swagger, mode, ct_url=False, url=False, active=True):
-  """"""
   if mode == AUTOREGISTER_MODE:
     t = threading.Timer(5.0, autoregister, [app, name, info, swagger, mode, ct_url, url, active])
     t.start()
