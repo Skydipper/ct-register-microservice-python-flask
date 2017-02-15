@@ -1,6 +1,7 @@
+
 import json
-import requests
 import threading
+from requests import post, Session, Request
 from flask import Flask, jsonify
 
 AUTOREGISTER_MODE = 'AUTOREGISTER_MODE'
@@ -11,7 +12,7 @@ def autoregister(app, name, info, swagger, mode, ct_url=False, url=False, active
     payload = {'name': name, 'url': url, 'active': active}
 
     try:
-        r = requests.post(ct_url+'/api/v1/microservice', json=payload)
+        r = post(ct_url+'/api/v1/microservice', json=payload)
     except Exception as error:
         raise Exception('Generic error')
 

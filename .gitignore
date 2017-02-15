@@ -1,2 +1,4 @@
 /CTRegisterMicroserviceFlask.egg-info
 /dist
+/venv
+*.pyc
