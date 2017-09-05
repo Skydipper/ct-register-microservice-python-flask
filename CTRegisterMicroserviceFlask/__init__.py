@@ -38,7 +38,7 @@ def register(app, name, info, swagger, mode, ct_url=False, url=False, active=Tru
     def get_ping():
         return 'pong'
 
-def request_to_microservice(config):
+def request_to_microservice(config, parse_json = True):
     """Request to microservice method"""
     try:
         session = Session()
@@ -55,6 +55,8 @@ def request_to_microservice(config):
 
         response = session.send(prepped)
     except Exception as error:
-       raise error
-
-    return response.json()
+        raise error
+    if parse_json == False:
+        return response
+    else:
+        return response.json()
