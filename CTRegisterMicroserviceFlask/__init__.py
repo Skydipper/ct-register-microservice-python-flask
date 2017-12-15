@@ -1,5 +1,6 @@
 import os
 import json
+import sys
 import threading
 from requests import post, Session, Request
 from flask import Flask, jsonify
@@ -21,7 +22,7 @@ def autoregister(app, name, info, swagger, mode, ct_url=False, url=False, active
         raise Exception('Generic error')
 
     if r.status_code != 200:
-        raise ValueError('Microservice has not been registered')
+        sys.exit()
 
 def register(app, name, info, swagger, mode, ct_url=False, url=False, active=True):
     """Register method"""
@@ -38,7 +39,7 @@ def register(app, name, info, swagger, mode, ct_url=False, url=False, active=Tru
     def get_ping():
         return 'pong'
 
-def request_to_microservice(config, parse_json = True):
+def request_to_microservice(config):
     """Request to microservice method"""
     try:
         session = Session()
@@ -55,8 +56,6 @@ def request_to_microservice(config, parse_json = True):
 
         response = session.send(prepped)
     except Exception as error:
-        raise error
-    if parse_json == False:
-        return response
-    else:
-        return response.json()
+       raise error
+
+    return response.json()
