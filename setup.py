@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='CTRegisterMicroserviceFlask',
-      version='0.3.2',
+      version='0.3.3',
       description='Library to interact with the Control-Tower api-gateway (register, do requests to other microservices, etc)',
       author='Sergio Gordillo',
       author_email='sergio.gordillo@vizzuality.com',

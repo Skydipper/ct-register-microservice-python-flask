@@ -19,7 +19,7 @@ def autoregister(app, name, info, swagger, mode, ct_url=False, url=False, active
     try:
         r = post(ct_url+'/api/v1/microservice', json=payload)
     except Exception as error:
-        raise Exception('Generic error')
+        sys.exit()
 
     if r.status_code != 200:
         sys.exit()
