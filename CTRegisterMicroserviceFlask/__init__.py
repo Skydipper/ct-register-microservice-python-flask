@@ -17,12 +17,12 @@ def autoregister(app, name, info, swagger, mode, ct_url=False, url=False, active
     payload = {'name': name, 'url': url, 'active': active}
 
     try:
-        r = post(ct_url+'/api/v1/microservice', json=payload)
+        r = post(ct_url+'/api/v1/microservice', json=payload, timeout=10)
     except Exception as error:
-        sys.exit()
+        os._exit(1)
 
     if r.status_code != 200:
-        sys.exit()
+        os._exit(1)
 
 def register(app, name, info, swagger, mode, ct_url=False, url=False, active=True):
     """Register method"""
