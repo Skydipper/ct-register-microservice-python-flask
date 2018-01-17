@@ -45,7 +45,7 @@ def request_to_microservice(config):
         session = Session()
         request = Request(
                 method=config.get('method'),
-                url=CT_URL + config.get('uri') if not API_VERSION else CT_URL + '/' + API_VERSION + config.get('uri'),
+                url=CT_URL + config.get('uri') if config.get('ignore_version') or not API_VERSION else CT_URL + '/' + API_VERSION + config.get('uri'),
                 headers={
                     'content-type': 'application/json',
                     'Authorization': 'Bearer '+CT_TOKEN
