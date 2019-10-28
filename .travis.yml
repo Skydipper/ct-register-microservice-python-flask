@@ -1,0 +1,19 @@
+language: python
+python:
+  - "3.6"
+install:
+    - pip install -e .[dev]
+env:
+  global:
+    - CC_TEST_REPORTER_ID=f0bfd006016982d7111034910626e1c4f557dd3e7a0092b93b85b61e940d837a
+    - CT_URL=http://127.0.0.1:9000
+    - CT_TOKEN=abcdef
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - pytest --cov=CTRegisterMicroserviceFlask
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

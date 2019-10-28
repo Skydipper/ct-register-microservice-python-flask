@@ -1,4 +1,7 @@
-# Microservice Registration in Python Flask
+# Microservice Registration for Python Flask applications
+
+[![Build Status](https://travis-ci.org/Skydipper/ct-register-microservice-python-flask.svg?branch=master)](https://travis-ci.org/Skydipper/ct-register-microservice-python-flask)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/86fd3831df6ae07c95ab/test_coverage)](https://codeclimate.com/github/Skydipper/ct-register-microservice-python-flask/test_coverage)
 
 ## Usage
 
@@ -31,3 +34,8 @@ config = {
 }
 response = CTRegisterMicroserviceFlask.request_to_microservice(config)
 ```
+## Developer guide
+
+To install dependencies, use `pip install -e .[dev]`. This will install both the production dependencies, as well as the test libraries.
+
+To run the tests, simply run ``
