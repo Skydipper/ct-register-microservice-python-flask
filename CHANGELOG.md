@@ -1,3 +1,4 @@
+# 0.5.1
 - Update registration call to expect 204 response from CT.
 
 # 0.5.0
