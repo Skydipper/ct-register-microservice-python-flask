@@ -34,8 +34,9 @@ config = {
 }
 response = CTRegisterMicroserviceFlask.request_to_microservice(config)
 ```
-## Developer guide
 
-To install dependencies, use `pip install -e .[dev]`. This will install both the production dependencies, as well as the test libraries.
+### Tests
 
-To run the tests, simply run ``
+Before you run the tests, be sure to install the necessary development libraries, using `pip install .[dev]`.
+
+Actual test execution is done by running the `pytest` executable on the root of the project.  
