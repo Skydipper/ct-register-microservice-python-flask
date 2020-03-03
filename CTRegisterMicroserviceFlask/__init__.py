@@ -23,7 +23,7 @@ def ct_register(name, ct_url, url, active):
     except Exception as error:
         os._exit(1)
 
-    if r.status_code != 200:
+    if r.status_code >= 400:
         os._exit(1)
 
 

@@ -16,7 +16,7 @@ def validate_env():
 
 @requests_mock.mock(kw='mocker')
 def test_microservice_register(mocker):
-    post_calls = mocker.post(os.getenv('CT_URL') + '/api/v1/microservice', json={})
+    post_calls = mocker.post(os.getenv('CT_URL') + '/api/v1/microservice', status_code=204)
 
     CTRegisterMicroserviceFlask.ct_register('test app', os.getenv('CT_URL'), 'http://local-url.com', True)
 
